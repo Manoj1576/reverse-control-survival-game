@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Control: Neon Ops</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="grid-bg"></div>
+
+  <!-- SCENE: HOME -->
+  <div id="scene-home" class="scene">
+    <h1 class="logo-title">NEON<br>REVERSE</h1>
+    <p class="subtitle">Survive. Collect. Upgrade.</p>
+
+    <div class="menu-buttons">
+      <button id="btn-play-menu" class="btn">PLAY GAME</button>
+      <button id="btn-shop" class="btn secondary">SKIN SHOP</button>
+    </div>
+
+    <div style="margin-top: 20px; color: #888;">
+      Coins: <span id="total-coins-display" style="color:var(--neon-yellow)">0</span>
+    </div>
+  </div>
+
+  <!-- SCENE: LEVEL SELECT -->
+  <div id="scene-levels" class="scene hidden">
+    <h2 style="font-size: 2.5rem; margin-bottom: 30px; font-family: 'Orbitron'">SELECT THREAT</h2>
+    <div class="level-grid">
+      <button class="level-card green" onclick="Game.startLevel('EASY')">
+        <h3>EASY</h3>
+        <p>Slower Enemies</p>
+      </button>
+      <button class="level-card blue" onclick="Game.startLevel('MEDIUM')">
+        <h3>MEDIUM</h3>
+        <p>Standard Ops</p>
+      </button>
+      <button class="level-card red" onclick="Game.startLevel('HARD')">
+        <h3>HARD</h3>
+        <p>Maximum Chaos</p>
+      </button>
+    </div>
+    <button id="btn-back-home" class="btn text-only">BACK</button>
+  </div>
+
+  <!-- SCENE: SHOP -->
+  <div id="scene-shop" class="scene hidden">
+    <h2 style="font-size: 2.5rem; margin-bottom: 10px; font-family: 'Orbitron'">ARMORY</h2>
+    <div style="margin-bottom: 20px;">Balance: <span id="shop-coins" style="color:var(--neon-yellow)">0</span></div>
+
+    <div id="shop-grid" class="shop-grid">
+      <!-- Injected via JS -->
+    </div>
+
+    <button id="btn-back-shop" class="btn text-only" style="margin-top:20px;">BACK</button>
+  </div>
+
+  <!-- SCENE: GAME -->
+  <div id="scene-game" class="scene hidden">
+    <div id="hud">
+      <div class="hud-panel">
+        TIME: <span id="time-display">0</span>s
+      </div>
+      <div class="hud-panel" style="color:var(--neon-yellow)">
+        COINS: <span id="game-coins">0</span>
+      </div>
+      <div id="status-display" class="hud-panel">
+        STABLE
+      </div>
+    </div>
+
+    <div id="game-container">
+      <!-- Entities injected by JS -->
+    </div>
+
+    <div class="controls-hint">
+      Watch out for REVERSED controls!
+    </div>
+  </div>
+
+  <!-- SCENE: RESULT -->
+  <div id="scene-result" class="scene hidden">
+    <div class="result-box">
+      <h2 id="final-score-title" style="margin-bottom: 20px; font-size: 2rem;">MISSION FAILED</h2>
+      <div class="result-stats">
+        <p>Survived: <span id="final-score-val" style="color:fff">0</span>s</p>
+        <p>Coins Collected: <span id="final-coins-val" style="color:var(--neon-yellow)">0</span></p>
+      </div>
+
+      <button id="btn-retry" class="btn">RETRY LEVEL</button>
+      <br><br>
+      <button id="btn-home" class="btn text-only">MAIN MENU</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
